@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import ImagePicker from "../../utils/imagePicker";
 import actions from "../../redux/actions";
 import "./imageUpload.css";
-// import { Redirect } from 'react-router-dom';
 
 // Creates a constant from actions
 const { addImage, setSelectedPoint } = actions;

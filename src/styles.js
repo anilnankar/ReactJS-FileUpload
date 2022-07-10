@@ -54,14 +54,11 @@ const style = {
   },
   ImageHeader: {
     main: {
-      height: '5vh',
-      display: 'flex',
-      justifyContent: 'center',
-      textAlign: 'center',
+      textAlign: 'left',
       margin: '5px'
     },
     name: { color: 'white', marginTop: '5px', marginRight: '5px' },
-    deleteButton: { background: 'red', color: 'white' },
+    deleteButton: { background: 'red', color: 'white', height: '25px', border: '0px'},
     editButton: {},
     cancelButton: {}
   },

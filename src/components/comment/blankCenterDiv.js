@@ -7,7 +7,6 @@ const style = {
   color: "white",
   marginTop: "20px",
   borderRadius: "3px",
-  display: "flex",
   alignItems: "center",
   justifyContent: "center",
   fontSize: "2em",

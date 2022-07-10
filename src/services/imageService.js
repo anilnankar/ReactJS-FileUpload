@@ -4,7 +4,6 @@ const IMAGE_API_URL = `${HOST_URL}/data`
 class ImageService {
 
     getAllImages() {
-        console.log(IMAGE_API_URL);
         return fetch(`${IMAGE_API_URL}/image.json`);
     }
 

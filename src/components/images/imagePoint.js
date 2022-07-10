@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import BlankCenterDiv from "../comment/blankCenterDiv";
 import ImagePreview from "../comment/imagePreview";
+import ImageHeader from '../comment/imageHeader';
 import actions from "../../redux/actions";
+import styles from "../../styles";
 
 // Creates a constant from actions
 const {
@@ -13,6 +15,7 @@ const {
   setSelectedPoint,
   toggleOptions,
 } = actions;
+const style = styles;
 
 // ImagePoint component to create new image point 
 class ImagePoint extends Component {
@@ -30,7 +33,8 @@ class ImagePoint extends Component {
       setDimensions,
       setNewPoint,
       setSelectedPoint,
-      changSelectedeImage
+      changSelectedeImage,
+      deleteImage
     } = this.props;
 
     // If image not selected then return empty div
@@ -50,10 +54,10 @@ class ImagePoint extends Component {
       setDimensions,
       setNewPoint,
       setSelectedPoint,
-      changSelectedeImage
+      changSelectedeImage,
+      deleteImage
     };
 
-    console.log("imagePreViewProps", imagePreViewProps);
     return (
       <div
         onClick={(event) => {
@@ -61,13 +65,20 @@ class ImagePoint extends Component {
           setSelectedPoint(null);
         }}
       >
-        <div
-          style={{
-            height: dimensions.height,
-          }}
-        >
-          <ImagePreview {...imagePreViewProps} />
+        <div style={style.imageBody}>
+          <div
+            style={{
+              height: dimensions.height,
+            }}
+          >
+            <ImagePreview {...imagePreViewProps} />
+          </div>
         </div>
+        <ImageHeader
+            image={image}
+            deleteImage={deleteImage}
+            setSelectedPoint={setSelectedPoint}
+          />
       </div>
     );
   }

@@ -11,7 +11,6 @@ const { getAllImage, getAllComments, changSelectedeImage, setSelectedPoint } = a
 class ImageList extends Component {
   
   async componentDidMount() {
-    console.log("componentDidMount");
     this.props.getAllImage();
     this.props.getAllComments();
   }

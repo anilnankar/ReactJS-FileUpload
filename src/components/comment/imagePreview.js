@@ -34,7 +34,6 @@ class ImagePreview extends Component {
       setDimensions,
       setSelectedPoint,
     } = this.props;
-    console.log("imgPoints", imgPoints);
 
     return (
       <div style={style.main}>
@@ -53,6 +52,10 @@ class ImagePreview extends Component {
                       alt="#"
                       ref={measureRef}
                       src={image.filepath}
+                      onError={({ currentTarget }) => {
+                        currentTarget.onerror = null; // prevents looping
+                        currentTarget.src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg";
+                      }}
                       className="img"
                     />
                   </div>

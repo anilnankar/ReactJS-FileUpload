@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PointComments from './pointComments';
 import { getPointData } from '../../utils/localStorage';
-import { colors } from '../../styles';
 
 // Creates a constant
 const pointRadius = 5;
@@ -14,16 +13,12 @@ class Point extends Component {
       id,
       selectedPoint,
       newPoint,
-      showPoints,
       setSelectedPoint,
       image
     } = this.props;
     const { width, height } = getPointData(this.props);
     const marginTop = height - pointRadius;
     const marginLeft = width - pointRadius;
-    const backgroundColor = showPoints
-      ? selectedPoint === id ? colors.selectedPoint : colors.primary
-      : colors.transparent;
     return (
       <div
         style={{

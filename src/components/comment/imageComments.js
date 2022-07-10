@@ -41,11 +41,17 @@ class ImageComments extends Component {
     );
 
     return (
-      <div className="comments">
+      <div>
         {imageComments && imageComments.length > 0 ? (
-          imageComments.map(commentComponent)
+          <div className="comments">
+            {
+              imageComments.map(commentComponent)
+            }
+          </div>
         ) : (
-          <BlankCenterDiv text="No Comments" />
+          <div className="noComments">
+            <BlankCenterDiv text="No Comments" />
+          </div>
         )}
       </div>
     );

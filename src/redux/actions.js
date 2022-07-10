@@ -5,7 +5,6 @@ import * as constant from "../utils/constants";
 const actions = {
    // Get all image action
    getAllImage: () => {
-     console.log(process.env.REACT_APP_BASE_URL);
     return async (dispatch) => {
       try {
         axios
@@ -37,13 +36,19 @@ const actions = {
       try {
           // Construct request body
           let requestBody = {
-            'filename': filename,
-            'filepath': "/tmp/"+filename
+            'file': file,
+            'filename': filename
           }
+
+          let headers = {
+            "Content-Type": "multipart/form-data",
+            "Accept": "application/json",
+            "type": "formData"
+          };
 
           // Send post API call to server
           axios
-          .post(`${constant.BASE_URL}/image`, requestBody)
+          .post(`${constant.BASE_URL}/image`, requestBody, {headers: headers})
           .then((response) => {
 
             // If http status is 201 the redirect to image list page
@@ -239,7 +244,6 @@ const actions = {
           'pointId': pointId,
           'time': time
         }
-        console.log(requestBody);
 
         // Send post API call to server
         axios
