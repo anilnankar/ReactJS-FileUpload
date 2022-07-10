@@ -1,0 +1,50 @@
+.imageList {
+    padding: 20px;    
+}
+
+.imageList ul{
+    list-style: none;
+    float: left;
+}
+
+.imageList ul li{
+    width: 1000px;
+    margin: 0px;
+    border-bottom: 2px solid #ccc;
+    height: 275px;
+    padding: 20px 10px 30px 10px;
+}
+
+.imageList ul :last-child{
+    border-bottom: none;
+}
+
+.imageList ul li .image {
+    width: 700px;
+    border-radius: 3px;
+    text-align: left;
+    float: left;
+}
+
+.imageList ul li .image .img {
+    padding: 2px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    width: 400px;
+    max-width: 100%;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.3);
+}
+
+.imageList ul li .imageComments{
+    float: right;
+}
+
+.comments {
+    background-color: #5e5e5e;
+    padding: 5px 0px;
+    margin-bottom: 15px;
+    height: 265px;
+    overflow-y: scroll;
+    width: 300px;
+}
