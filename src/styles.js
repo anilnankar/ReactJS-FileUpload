@@ -52,7 +52,7 @@ const style = {
       justifyContent: 'center'
     }
   },
-  ImageHeader: {
+  ImageFooter: {
     main: {
       textAlign: 'left',
       margin: '5px'

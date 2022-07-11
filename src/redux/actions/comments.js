@@ -29,8 +29,6 @@ export const getAllComments = (dimensions) => {
         let imageComments = [];
         let imagePoints = [];
         response.data.forEach(function(item, index) {
-          console.log("item",item);
-          console.log("index",index);
           if(!imageComments[response.data[index].imageId]) {
             imageComments[response.data[index].imageId] = [];
           }
@@ -42,9 +40,6 @@ export const getAllComments = (dimensions) => {
           imagePoints[response.data[index].imageId].push(item.pointId);
         });
         
-        console.log("imageComments",imageComments);
-        console.log("imagePoints",imagePoints);
-
         // Dispatch the objects
         dispatch({
           type: constant.GET_COMMENTS,
