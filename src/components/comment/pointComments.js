@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import InputTextbox from "../ui/form/inputTextbox";
 import InputTextarea from "../ui/form/inputTextarea";
 import Button from "../ui/form/button";
-import actions from "../../redux/actions";
+import * as actions from "../../redux/actions";
 import styles from "../../styles";
 
 // Creates a constant from actions and style
@@ -65,7 +65,8 @@ class PointComments extends Component {
     }
 
     const addComment = function() {
-      const newPoints = newPoint ? [pointId, ...points] : points;
+      const imgPoints = points ? [...new Set(points)] : [];
+      const newPoints = newPoint ? [pointId, ...imgPoints] : imgPoints;
       setComments(comment, email, image, newPoints, pointId, comments);
     }
 
@@ -86,7 +87,7 @@ class PointComments extends Component {
                 thisPointComments.length === 1
                   ? removePoint(points, pointId)
                   : points;
-              deleteComment(comment, comments, image, newPoints, pointId);
+                  deleteComment(comment, comments, image, newPoints, pointId);
             }}
           >
             X

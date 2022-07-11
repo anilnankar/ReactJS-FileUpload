@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import ImagePicker from "../../utils/imagePicker";
-import actions from "../../redux/actions";
+import * as actions from "../../redux/actions";
 import "./imageUpload.css";
 
 // Creates a constant from actions

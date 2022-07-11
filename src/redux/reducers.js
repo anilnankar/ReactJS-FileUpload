@@ -5,10 +5,7 @@ const initState = {
   images: [],
   comments: {},
   points: {},
-  selectedImage: {
-    "id": 1657281237811,
-    "file": "data:image/png;base64"
-  },
+  selectedImage: {},
   dimensions: {
     "top": 564,
     "right": 476,
@@ -147,7 +144,7 @@ export default function imageReducer(state = initState, action) {
     
     // Add comment in state
     case constant.SET_COMMENTS: {
-      const id = action.selectedImage.id;
+      const id = action.image.id;
       const { points, comments } = state;
       points[id] = action.points;
       comments[id] = action.comments;

@@ -3,17 +3,15 @@ import { connect } from "react-redux";
 import BlankCenterDiv from "../comment/blankCenterDiv";
 import ImagePreview from "../comment/imagePreview";
 import ImageHeader from '../comment/imageHeader';
-import actions from "../../redux/actions";
+import * as actions from "../../redux/actions";
 import styles from "../../styles";
 
 // Creates a constant from actions
 const {
   setDimensions,
-  editImage,
   deleteImage,
   setNewPoint,
-  setSelectedPoint,
-  toggleOptions,
+  setSelectedPoint
 } = actions;
 const style = styles;
 
@@ -43,7 +41,7 @@ class ImagePoint extends Component {
     }
 
     // Create constant for points of particular image
-    const imgPoints = points[image.id];
+    const imgPoints = points[image.id] ? [...new Set(points[image.id])] : [];
     const imagePreViewProps = {
       dimensions,
       image,
@@ -101,11 +99,11 @@ function mapStateToProps(state) {
       notSelected: "Please  upload a new Image",
     };
   }
-  if (!selectedImage) {
-    return {
-      notSelected: "Please Select a Picture or Upload a Image",
-    };
-  }
+  // if (!selectedImage) {
+  //   return {
+  //     notSelected: "Please Select a Picture or Upload a Image",
+  //   };
+  // }
   return {
     dimensions,
     selectedImage,
@@ -120,9 +118,7 @@ function mapStateToProps(state) {
 // Connecting the component to the redux store & export ImagePoint component
 export default connect(mapStateToProps, {
   setDimensions,
-  editImage,
   deleteImage,
   setNewPoint,
-  setSelectedPoint,
-  toggleOptions,
+  setSelectedPoint
 })(ImagePoint);

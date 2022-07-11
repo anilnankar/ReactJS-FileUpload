@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import BlankCenterDiv from "./blankCenterDiv";
-import actions from "../../redux/actions";
+import * as actions from "../../redux/actions";
 import { timeDifference } from "../../utils/localStorage";
 import styles from "../../styles";
 
@@ -16,7 +16,7 @@ class ImageComments extends Component {
     const { imageId, selectedPoint, comments, setSelectedPoint } = this.props;
 
     // Get the particular image comments from all comments
-    let imageComments = comments[imageId];
+    let imageComments = comments[imageId] ? comments[imageId] : [];
 
     // Create comment componenet for each comment
     const commentComponent = (comment) => (
