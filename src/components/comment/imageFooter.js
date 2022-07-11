@@ -5,16 +5,7 @@ import styles from "../../styles";
 const style = styles.ImageFooter;
 
 // ImageFooter component to display all delete button of image
-export default class ImageFooter extends Component {
-  state = {
-    editable: false,
-    name: this.props.image.name,
-  };
-  componentWillReceiveProps(nextProps) {
-    if (this.props.image.name !== nextProps.image.name) {
-      this.setState({ editable: false, name: nextProps.image.name });
-    }
-  }
+export default class ImageFooter extends Component {  
   render() {
     const { image, deleteImage } = this.props;
     return (

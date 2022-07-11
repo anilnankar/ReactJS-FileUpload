@@ -88,7 +88,7 @@ export const deleteComment = (deletedComment, comments, image, newPoints, pointI
 }
 
 // Add a comment of selected image action
-export const setComments = (comment, email, image, newPoints, pointId, allComments) => {
+export const setComments = (comment, email, image, points, pointId, allComments) => {
   return async (dispatch) => {
     const currentTime =  new Date().getTime();
     await commentService.addComment(comment, email, image, pointId, currentTime)
@@ -103,13 +103,13 @@ export const setComments = (comment, email, image, newPoints, pointId, allCommen
             time: currentTime,
             pointId,
           };
-          const newComments = [newComment, ...imgComments];          
+          const comments = [newComment, ...imgComments];          
 
           dispatch({
             type: constant.SET_COMMENTS,
             image,
-            newPoints,
-            newComments,
+            points,
+            comments,
             pointId,
           });
         }
