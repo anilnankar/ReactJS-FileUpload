@@ -36,7 +36,7 @@ class Point extends Component {
             setSelectedPoint(newSelectedPoint);
           }}
         >
-          <i class="fa fa-map-marker" style={{fontSize: '25px', color: '#ffa700'}}></i>
+          <i className="fa fa-map-marker" style={{fontSize: '25px', color: '#ffa700'}}></i>
         </div>
         <PointComments newPoint={newPoint} pointId={id} image={image}/>
       </div>
