@@ -14,7 +14,7 @@ const setPoint = (dimensions, currentPosition) => {
   } catch (e) {}
 };
 
-// Function to get point data
+// Function to get point attributes
 const getPointData = ({ id, dimensions }) => {
   const point = parseInt(id, 10);
   const width = Math.round(((point / percent) * dimensions.width) / reminder);

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import BlankCenterDiv from "../comment/blankCenterDiv";
 import ImagePreview from "../comment/imagePreview";
-import ImageHeader from '../comment/imageHeader';
+import ImageFooter from '../comment/imageFooter';
 import * as actions from "../../redux/actions";
 import styles from "../../styles";
 
@@ -72,7 +72,7 @@ class ImagePoint extends Component {
             <ImagePreview {...imagePreViewProps} />
           </div>
         </div>
-        <ImageHeader
+        <ImageFooter
             image={image}
             deleteImage={deleteImage}
             setSelectedPoint={setSelectedPoint}

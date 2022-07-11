@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import styles from "../../styles";
 
-const style = styles.ImageHeader;
+// Creates a constant from style
+const style = styles.ImageFooter;
 
-export default class ImageHeader extends Component {
+// ImageFooter component to display all delete button of image
+export default class ImageFooter extends Component {
   state = {
     editable: false,
     name: this.props.image.name,

@@ -16,6 +16,8 @@ class Point extends Component {
       setSelectedPoint,
       image
     } = this.props;
+
+    // Get point data
     const { width, height } = getPointData(this.props);
     const marginTop = height - pointRadius;
     const marginLeft = width - pointRadius;

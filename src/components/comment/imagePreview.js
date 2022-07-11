@@ -13,7 +13,7 @@ class ImagePreview extends Component {
 
   // Function of set new point
   setComment = function (event, image) {
-    const { dimensions, setNewPoint, selectedImage, selectedPoint, changSelectedeImage } = this.props;
+    const { dimensions, setNewPoint, changSelectedeImage } = this.props;
     changSelectedeImage(image);
     event.stopPropagation();
     const newPoint = setPoint(dimensions, this.currentPosition);

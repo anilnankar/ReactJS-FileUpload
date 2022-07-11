@@ -10,6 +10,7 @@ class ImageApp extends Component {
     // Return the routes
     return (
       <div className="ImageApp">
+        <ImageUpload />
         <Router>
           <div>
             <ul id="imageMenu">
