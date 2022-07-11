@@ -60,23 +60,23 @@ export const getAllComments = (dimensions) => {
 }
 
 // Delete comment action
-export const deleteComment = (deletedComment, comments, image, newPoints, pointId) => {
+export const deleteComment = (deletedComment, oldComments, image, points, pointId) => {
   return async (dispatch) => {
     await commentService.deleteComment(deletedComment.id)
       .then((response) => {
         if (response && response.status === 204) {
-          const newComments = [];
-          comments.forEach((singleComment) => {
+          const comments = [];
+          oldComments.forEach((singleComment) => {
             if (deletedComment.id !== singleComment.id) {
-              newComments.push(singleComment);
+              comments.push(singleComment);
             }
           });
           
           dispatch({
             type: constant.SET_COMMENTS,
             image,
-            newPoints,
-            newComments,
+            points,
+            comments,
             pointId
           });
         }
