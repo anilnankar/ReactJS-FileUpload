@@ -94,14 +94,6 @@ export default function imageReducer(state = initState, action) {
       };
     }
 
-    // Update toggle option in state
-    case constant.TOGGLE_OPTIONS: {
-      return {
-        ...state,
-        [action.key]: action.value,
-      };
-    }
-
     // Update dimention in state
     case constant.SET_DIMENSION: {
       return { ...state, dimensions: action.dimensions };

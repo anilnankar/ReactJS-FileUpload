@@ -25,7 +25,7 @@ const removePoint = (points, pointId) => {
 class PointComments extends Component {
   state = {
     email: "",
-    comment: ""
+    description: ""
   };
 
   updateEmailState = function(email) {
@@ -35,7 +35,7 @@ class PointComments extends Component {
   getState = function() {
     return {
       email: this.state.email,
-      comment: this.state.comment,
+      description: this.state.description,
     };
   }
 
@@ -56,7 +56,7 @@ class PointComments extends Component {
     // Get email and comment from state
     const {
       email,
-      comment
+      description
     } = this.getState();
 
     // If selected point is same as point the return
@@ -67,7 +67,7 @@ class PointComments extends Component {
     const addComment = function() {
       const imgPoints = points ? [...new Set(points)] : [];
       const newPoints = newPoint ? [pointId, ...imgPoints] : imgPoints;
-      setComments(comment, email, image, newPoints, pointId, comments);
+      setComments(description, email, image, newPoints, pointId, comments);
     }
 
     const cancelComment = function() {
@@ -75,7 +75,8 @@ class PointComments extends Component {
     }
 
     // Create comment componenet for each comment
-    const commentComponent = (comment) => (
+    const commentComponent = (comment) => {
+      return (      
       <div style={style.commentComponent} key={comment.id}>
         <div style={style.commentBody}>
           <span style={style.commentUser}>Email: {comment.email}</span>
@@ -95,7 +96,7 @@ class PointComments extends Component {
         </div>
         <span style={style.commentSpan}>{comment.description}</span>
       </div>
-    );
+    )};
     return (
       <div
         onClick={(event) => {
@@ -110,10 +111,10 @@ class PointComments extends Component {
           autoFocus
           placeholder="Enter Comment"
           style={style.inputTextarea}
-          name="comment"
-          onSearch={(comment) => {
-            if (comment) {
-              this.setState({comment: comment});
+          name="description"
+          onSearch={(description) => {
+            if (description) {
+              this.setState({description: description});
             }
           }}
         />

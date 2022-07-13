@@ -88,17 +88,17 @@ export const deleteComment = (deletedComment, oldComments, image, points, pointI
 }
 
 // Add a comment of selected image action
-export const setComments = (comment, email, image, points, pointId, allComments) => {
+export const setComments = (description, email, image, points, pointId, allComments) => {
   return async (dispatch) => {
     const currentTime =  new Date().getTime();
-    await commentService.addComment(comment, email, image, pointId, currentTime)
+    await commentService.addComment(description, email, image, pointId, currentTime)
       .then((response) => {
         // If http status is 201 the redirect to image list page
         if (response && response.status === 201) {
           const imgComments = allComments ? allComments : [];
           const newComment = {
             id: response.data.id,
-            comment: comment,
+            description: description,
             email: email,
             time: currentTime,
             pointId,
