@@ -12,13 +12,20 @@ class ImageUpload extends Component {
 
   render() {
     return (
-      <div
-        onClick={() => {
-          setSelectedPoint(null);
-        }}
-      >
-        <ImagePicker addImage={this.props.addImage} />
+      <div>
+        <div className="dropzone">
+          "Drag and drop file here"
+        </div>
+        <div
+          className="uploadfile"
+          onClick={() => {
+            setSelectedPoint(null);
+          }}
+        >
+          <ImagePicker addImage={this.props.addImage} />
+        </div>
       </div>
+      
     );
   }
 }
