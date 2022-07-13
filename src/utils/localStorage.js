@@ -23,9 +23,9 @@ const getPointData = ({ id, dimensions }) => {
 };
 
 // Function to get comment time differnce with current time
-const timeDifference = (givenTime) => {
-  givenTime = new Date(givenTime);
-  const milliseconds = new Date().getTime() - givenTime.getTime();
+const timeDifference = (givenTimeInMs) => {
+  const givenTime = new Date(givenTimeInMs);
+  const milliseconds = new Date().getTime() - givenTimeInMs;
   const numberEnding = (number) => {
     return number > 1 ? "s" : "";
   };

@@ -33,6 +33,7 @@ class ImagePreview extends Component {
       newPoint,
       setDimensions,
       setSelectedPoint,
+      changSelectedeImage
     } = this.props;
 
     return (
@@ -69,6 +70,7 @@ class ImagePreview extends Component {
                         showPoints={showPoints}
                         selectedPoint={selectedPoint}
                         setSelectedPoint={setSelectedPoint}
+                        changSelectedeImage={changSelectedeImage}
                         image={image}
                       />
                     ))
@@ -82,6 +84,7 @@ class ImagePreview extends Component {
                         newPoint
                         selectedPoint={selectedPoint}
                         setSelectedPoint={setSelectedPoint}
+                        changSelectedeImage={changSelectedeImage}
                         image={image}
                       />
                     ) : (

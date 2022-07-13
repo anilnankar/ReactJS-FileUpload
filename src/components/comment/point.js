@@ -14,7 +14,8 @@ class Point extends Component {
       selectedPoint,
       newPoint,
       setSelectedPoint,
-      image
+      image,
+      changSelectedeImage
     } = this.props;
 
     // Get point data
@@ -33,6 +34,7 @@ class Point extends Component {
           onClick={event => {
             event.stopPropagation();
             const newSelectedPoint = id === selectedPoint ? null : id;
+            changSelectedeImage(image);
             setSelectedPoint(newSelectedPoint);
           }}
         >
