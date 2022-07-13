@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ImageList from "./imageList";
 import ImageUpload from "./imageUpload";
 import "./imageApp.css";
@@ -23,10 +23,14 @@ class ImageApp extends Component {
           </div>
           <div id="imageRoutes"></div>
           <hr />
-          <Routes>
-            <Route exact path="/" element={<ImageUpload />} />
-            <Route path="/imageList" element={<ImageList />} />
-          </Routes>
+          <Switch>
+            <Route exact path="/">
+              <ImageUpload />
+            </Route>
+            <Route path="/imageList">
+              <ImageList />
+            </Route>
+          </Switch>
         </Router>
       </div>
     );
