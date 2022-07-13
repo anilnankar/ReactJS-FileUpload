@@ -13,10 +13,10 @@ const style = styles.AllComments;
 class ImageComments extends Component {
   render() {
     // Creates a constant from props
-    const { imageId, selectedPoint, comments, setSelectedPoint } = this.props;
+    const { image, selectedPoint, comments, setSelectedPoint, changSelectedeImage } = this.props;
 
     // Get the particular image comments from all comments
-    let imageComments = comments[imageId] ? comments[imageId] : [];
+    let imageComments = comments[image.id] ? comments[image.id] : [];
 
     // Create comment componenet for each comment
     const commentComponent = (comment) => (
@@ -29,6 +29,7 @@ class ImageComments extends Component {
         }
         onClick={(event) => {
           event.stopPropagation();
+          changSelectedeImage(image);
           setSelectedPoint(comment.pointId);
         }}
       >

@@ -15,7 +15,7 @@ class SingleImage extends Component {
           <ImagePoint image={image} changSelectedeImage={changSelectedeImage}/>
         </div>
         <div className="imageComments">
-          <ImageComments imageId={image.id} />
+          <ImageComments image={image} changSelectedeImage={changSelectedeImage}/>
         </div>
       </div>
     );

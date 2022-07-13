@@ -60,6 +60,7 @@ class ImagePoint extends Component {
       <div
         onClick={(event) => {
           event.stopPropagation();
+          changSelectedeImage(image);
           setSelectedPoint(null);
         }}
       >
